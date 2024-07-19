@@ -4,7 +4,6 @@
 
 @section('content')
 
-
 <div class="container">
      <h1 class="info">商品画像一覧</h1>
 </div>

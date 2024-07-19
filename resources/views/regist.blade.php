@@ -4,6 +4,7 @@
 
 @section('content')
 
+
 <h1 class="info2">商品新規登録画面</h1>
 <br>
 <div class="container" id="product">

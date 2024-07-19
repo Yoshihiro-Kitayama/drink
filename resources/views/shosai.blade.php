@@ -5,6 +5,7 @@
 @section('content')
 
 
+
 <h1 class="info2">商品情報詳細画面</h1>
 <br>
 <div class="container" id="product">
