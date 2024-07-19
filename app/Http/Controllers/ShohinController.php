@@ -106,7 +106,7 @@ class ShohinController extends Controller
 
     // 検索機能
 
-        public function search(Request $request){
+        public function search(Request $request) {
 
             $keyword = $request->input('keyword');
             

@@ -6,13 +6,13 @@
 
 
 <div class="container">
-     <h1 style="font-size:1.25rem;" >商品画像一覧</h1>
+     <h1 class="info">商品画像一覧</h1>
 </div>
 
 <form action="{{ route('search') }}" method="GET">
     @csrf
     <!-- 商品名検索 -->
-    <div class="search_name" style="margin-left:20px;">
+    <div class="search_name">
         <input type="text" name="keyword" placeholder="検索キーワード">
 
     <!-- メーカー名検索 -->
@@ -31,7 +31,7 @@
 <div class="links">
   <table class="table table-striped">
      <thead>
-        <tr style="text-align:center">
+        <tr>
             <th>ID</th>
             <th>商品画像</th>
             <th>商品名</th>
@@ -44,19 +44,19 @@
     </thead>
      <tbody>
     @foreach ($shohins as $shohin)
-        <tr style="text-align:center; vertical-align:middle;">
-            <td style="text-align:center">{{ $shohin->id }}</td>
+        <tr>
+            <td>{{ $shohin->id }}</td>
             
             <td><img src="{{ asset($shohin->image_file) }}" width="100px"></td>
 
-            <td style="text-align:center">{{ $shohin->name }}</td>
-            <td style="text-align:center">{{ $shohin->price }}</td>
-            <td style="text-align:center">{{ $shohin->stocks }}</td>
-            <td style="text-align:center">{{ $shohin->makername }}</td>
-            <td style="text-align:center;">
+            <td>{{ $shohin->name }}</td>
+            <td>{{ $shohin->price }}</td>
+            <td>{{ $shohin->stocks }}</td>
+            <td>{{ $shohin->makername }}</td>
+            <td>
                 <a class="btn btn-primary" href="{{ route('shosai' , $shohin->id) }}">詳細</a>
             </td>
-            <td style="text-align:center;">
+            <td>
                 <form action="{{ route('destroy', $shohin->id) }}" method="post">
                     @csrf
                     @method('DELETE')

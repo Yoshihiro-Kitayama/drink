@@ -4,29 +4,11 @@
 
 @section('content')
 
-<style>
 
-    label {
-    display: inline-block;
-    width: 150px;
-    vertical-align: top;
-}
-
-    span {
-    color:red;
-    font-weight:600;
-    }
-
-    #back {
-     margin-left:30px;  
-    }
-    
-</style>
-
-<h1 style="font-size:1.75rem; text-align:center">商品新規登録画面</h1>
+<h1 class="info2">商品新規登録画面</h1>
 <br>
-<div style="border:1px solid black" class="container">
-        <div class="col-md-8">
+<div class="container" id="product">
+    <div class="col-md-8">
 
 <form action="{{ route('submit') }}" method="post"  enctype='multipart/form-data'>
     @csrf
@@ -35,7 +17,7 @@
                 <label for="name">商品名<span>*</span></label>
                 <input type="text" id="name" name="name" value="{{ old('name') }}">
                 @if($errors->has('name'))
-                        <p style="color:red;">{{ $errors->first('name') }}</p>
+                        <p>{{ $errors->first('name') }}</p>
                     @endif
             </div>
             <br>
@@ -48,7 +30,7 @@
                     <option value="キリン">キリン</option>
                 </select>
                 @if($errors->has('makername'))
-                        <p style="color:red;">{{ $errors->first('makername') }}</p>
+                        <p>{{ $errors->first('makername') }}</p>
                     @endif
             </div>
             <br>
@@ -56,7 +38,7 @@
                 <label for="price">価格<span>*</span></label>
                 <input type="text" id="price" name="price" value="{{ old('price') }}">
                 @if($errors->has('price'))
-                        <p style="color:red;">{{ $errors->first('price') }}</p>
+                        <p>{{ $errors->first('price') }}</p>
                     @endif
             </div>
                 <br>
@@ -64,7 +46,7 @@
                     <label for="stocks">在庫数<span>*</span></label>
                     <input type="text" id="stocks" name="stocks" value="{{ old('stocks') }}">
                     @if($errors->has('stocks'))
-                        <p style="color:red;">{{ $errors->first('stocks') }}</p>
+                        <p>{{ $errors->first('stocks') }}</p>
                     @endif
                 </div>
                 <br>
@@ -72,7 +54,7 @@
                     <label for="comment">コメント</label>
                     <textarea id="coment" name="comment" value="{{ old('coment') }}" rows="2"></textarea>
                     @if($errors->has('comment'))
-                        <p style="color:red;">{{ $errors->first('comment') }}</p>
+                        <p>{{ $errors->first('comment') }}</p>
                     @endif
                 </div>
                 <br>

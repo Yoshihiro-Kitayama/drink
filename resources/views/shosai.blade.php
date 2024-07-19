@@ -4,21 +4,10 @@
 
 @section('content')
 
-<style>
-    label {
-    display: inline-block;
-    width: 150px;
-    vertical-align: top;
-}
 
-    #back {
-        margin-left:30px;  
-    }
-</style>
-
-<h1 style="font-size:1.75rem; text-align:center">商品情報詳細画面</h1>
+<h1 class="info2">商品情報詳細画面</h1>
 <br>
-<div style="border:1px solid black" class="container">
+<div class="container" id="product">
         <div class="col-md-8">
 
             <div class="form-group">
