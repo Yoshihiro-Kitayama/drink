@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Auth::routes();
+
+
+Route::get('/home', [App\Http\Controllers\ShohinController::class, 'showList'])->name('list');
+Route::get('/', [App\Http\Controllers\ShohinController::class, 'search'])->name('search');
+
+Route::get('/shosai/{id}', [App\Http\Controllers\ShohinController::class, 'shosai'])->name('shosai');
+Route::get('/edit/{id}', [App\Http\Controllers\ShohinController::class, 'edit'])->name('edit');
+Route::put('/edit/{id}', [App\Http\Controllers\ShohinController::class, 'update'])->name('update');
+
+Route::get('/regist', [App\Http\Controllers\ShohinController::class, 'showRegistForm'])->name('regist');
+Route::post('/regist', [App\Http\Controllers\ShohinController::class, 'registSubmit'])->name('submit');
+
+
+Route::delete('/home/{shohin}', [App\Http\Controllers\ShohinController::class, 'destroy'])->name('destroy');
